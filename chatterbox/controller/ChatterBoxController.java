@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 public class ChatterBoxController {
+    
     private List<User> users;
     private List<Message> messages;
     private User currentUser;
