@@ -1,6 +1,5 @@
 
 package chatterbox.view;
-
 import chatterbox.controller.ChatterBoxController;
 import chatterbox.entity.Message;
 import java.util.Scanner;
