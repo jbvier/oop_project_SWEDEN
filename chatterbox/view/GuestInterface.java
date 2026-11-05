@@ -15,7 +15,7 @@ public class GuestInterface {
     }
 
     public void showMenu() {  /* Julien améliore ça si t'as le temps*/
-        boolean running = true
+        boolean running = true;
         while (running) {
             System.out.println("\n--- ChatterBox (Guest Menu) ---");
             System.out.println("1-> View all messages");
@@ -54,7 +54,7 @@ public class GuestInterface {
 
     private void displayAllMessages() {
         System.out.println("\n--- All Messages ---");
-        List<Message> messageList = appController.getAllMessages();
+        List<Message> messageList = controller.getAllMessages();
 
         if (messageList.isEmpty()) {
             System.out.println("No messages yet.");
