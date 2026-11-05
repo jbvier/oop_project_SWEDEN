@@ -3,6 +3,7 @@ package chatterbox.view;
 import chatterbox.controller.ChatterBoxController;
 import chatterbox.entity.Message;
 import java.util.Scanner;
+import java.util.List;
 
 public class GuestInterface {
     private ChatterBoxController controller;
@@ -47,7 +48,7 @@ public class GuestInterface {
 
     private void displayAllMessages() {
         System.out.println("\n--- All Messages ---");
-        java.util.List<Message> msgs = controller.getAllMessages();
+        List<Message> msgs = controller.getAllMessages();
         if (msgs.isEmpty()) {
              System.out.println("No messages yet.");
         }
