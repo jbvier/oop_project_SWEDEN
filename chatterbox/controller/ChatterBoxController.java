@@ -21,7 +21,7 @@ public class ChatterBoxController {
     public ChatterBoxController() {
         users = new ArrayList<>();
         messages = new ArrayList<>();
-        /* default users*/
+        /* Utilisateurs hard codés */
         users.add(new User("Alice", "password123"));
         users.add(new User("Bob", "bobpass"));
         loadFromCSV();
@@ -91,7 +91,7 @@ public class ChatterBoxController {
         if (!file.exists()){
             return;
         }
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {  /* on peut pas rendre ça plus lisible ju?*/
             String line;
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",", 4);
