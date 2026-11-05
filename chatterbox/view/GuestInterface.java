@@ -16,9 +16,9 @@ public class GuestInterface {
     public void showMenu() {
         while (true) {
             System.out.println("\n--- ChatterBox (Guest Menu) ---");
-            System.out.println("1. View all messages");
-            System.out.println("2. Login");
-            System.out.println("3. Exit");
+            System.out.println("1-> View all messages");
+            System.out.println("2-> Login");
+            System.out.println("3-> Exit");
             System.out.print("Choose an option: ");
             
             String choice = scanner.nextLine();

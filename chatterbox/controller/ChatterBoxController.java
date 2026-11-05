@@ -21,7 +21,7 @@ public class ChatterBoxController {
     public ChatterBoxController() {
         users = new ArrayList<>();
         messages = new ArrayList<>();
-        // Hardcoded users for simplicity as per requirements
+        /* default users*/
         users.add(new User("Alice", "password123"));
         users.add(new User("Bob", "bobpass"));
         loadFromCSV();
