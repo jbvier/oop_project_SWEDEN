@@ -15,8 +15,16 @@ public class Message {
         this.timestamp = timestamp;
     }
 
-    public int getId() { return id; }
-    public String getContent() { return content; }
-    public User getAuthor() { return author; }
-    public Date getTimestamp() { return timestamp; }
+    public int getId() {
+        return id;
+    }
+    public String getContent() {
+        return content;
+    }
+    public User getAuthor() {
+        return author;
+    }
+    public Date getTimestamp() {
+        return timestamp;
+    }
 }
