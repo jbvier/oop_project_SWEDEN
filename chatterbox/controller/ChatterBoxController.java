@@ -88,7 +88,9 @@ public class ChatterBoxController {
 
     private void loadFromCSV() {
         File file = new File(CSV_FILE);
-        if (!file.exists()) return;
+        if (!file.exists()){
+            return;
+        }
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -97,7 +99,7 @@ public class ChatterBoxController {
                     int id = Integer.parseInt(parts[0]);
                     String authorName = parts[1];
                     long timestamp = Long.parseLong(parts[2]);
-                    String content = parts[3].replace("\\n", "\n").replace("\\,", ",");
+                    String content = parts[3];
 
                     User author = null;
                     for (User u : users) {
@@ -119,7 +121,7 @@ public class ChatterBoxController {
     private void saveToCSV() {
         try (PrintWriter pw = new PrintWriter(new FileWriter(CSV_FILE))) {
             for (Message m : messages) {
-                String safeContent = m.getContent().replace(",", "\\,").replace("\n", "\\n");
+                String safeContent = m.getContent();
                 pw.println(m.getId() + "," + m.getAuthor().getUsername() + "," + m.getTimestamp().getTime() + "," + safeContent);
             }
         } catch (IOException e) {
