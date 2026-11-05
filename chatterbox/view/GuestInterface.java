@@ -8,8 +8,8 @@ public class GuestInterface {
     private ChatterBoxController controller;
     private Scanner scanner;
 
-    public GuestInterface(ChatterBoxController controller) {
-        this.controller = controller;
+    public GuestInterface(ChatterBoxController c) {
+        this.controller = c;
         this.scanner = new Scanner(System.in);
     }
 
