@@ -15,7 +15,8 @@ public class GuestInterface {
     }
 
     public void showMenu() {
-        while (true) {
+        boolean running = true
+        while (running) {
             System.out.println("\n--- ChatterBox (Guest Menu) ---");
             System.out.println("1-> View all messages");
             System.out.println("2-> Login");
@@ -39,7 +40,7 @@ public class GuestInterface {
                 }
             } else if (choice.equals("3")) {
                 System.out.println("Goodbye!");
-                break;
+                running = false;
             } else {
                 System.out.println("Invalid choice.");
             }
