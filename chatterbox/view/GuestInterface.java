@@ -14,7 +14,7 @@ public class GuestInterface {
         this.scanner = new Scanner(System.in);
     }
 
-    public void showMenu() {
+    public void showMenu() {  /* Julien améliore ça si t'as le temps*/
         boolean running = true
         while (running) {
             System.out.println("\n--- ChatterBox (Guest Menu) ---");
@@ -54,12 +54,19 @@ public class GuestInterface {
 
     private void displayAllMessages() {
         System.out.println("\n--- All Messages ---");
-        List<Message> msgs = controller.getAllMessages();
-        if (msgs.isEmpty()) {
-             System.out.println("No messages yet.");
-        }
-        for (Message m : msgs) {
-            System.out.println("[" + m.getId() + "] " + m.getAuthor().getUsername() + " : " + m.getContent());
+        List<Message> messageList = appController.getAllMessages();
+
+        if (messageList.isEmpty()) {
+            System.out.println("No messages yet.");
+        } else {
+            for (int i = 0; i < messageList.size(); i++) {
+                Message msg = messageList.get(i);
+                int id = msg.getId();
+                String author = msg.getAuthor().getUsername();
+                String text = msg.getContent();
+
+                System.out.println("[" + id + "] " + author + " : " + text);
+            }
         }
     }
 }
