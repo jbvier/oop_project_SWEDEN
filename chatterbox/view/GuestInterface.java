@@ -27,23 +27,28 @@ public class GuestInterface {
             if (choice.equals("1")) {
                 displayAllMessages();
             } else if (choice.equals("2")) {
-                System.out.print("Username: ");
-                String user = scanner.nextLine();
-                System.out.print("Password: ");
-                String pass = scanner.nextLine();
-                if (controller.login(user, pass)) {
-                    System.out.println("Login successful!");
-                    UserInterface ui = new UserInterface(controller, scanner);
-                    ui.showUserMenu();
-                } else {
-                    System.out.println("Invalid credentials.");
-                }
+                handleLogin();
             } else if (choice.equals("3")) {
                 System.out.println("Goodbye!");
                 running = false;
             } else {
                 System.out.println("Invalid choice.");
             }
+        }
+    }
+
+    private void handleLogin(){
+        System.out.print("Username: ");
+        String user = scanner.nextLine();
+        System.out.print("Password: ");
+        String pass = scanner.nextLine();
+        if (controller.login(user, pass)) {
+            System.out.println("Login successful!");
+            UserInterface ui = new UserInterface(controller, scanner);
+            ui.showUserMenu();
+        }
+        else {
+            System.out.println("Invalid credentials.");
         }
     }
 
